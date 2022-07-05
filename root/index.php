@@ -1,17 +1,14 @@
 <?php
 include "define.php";
 
-global $_ROUTE;
 
-// URI Route
-function getRoute() {
-	$request_uri = trim($_SERVER['REQUEST_URI'], "/");
-	$RequestURI = explode("?", $request_uri);
-	
-	if (!$RequestURI[0]) $Route = array("index");
-	else $Route = explode("/", $RequestURI[0]);
-	
-	return implode(DS , $Route);
+try {
+
+    // 라우트 기능으로 MVC패턴식 처리.
+    $R = new Lib\Common\App();
+    $RESULT = $R->initApp();
+
+    
+} catch(\Exception $e) {
+    var_dump($e);
 }
-
-$_ROUTE = getRoute();

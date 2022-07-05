@@ -6,10 +6,11 @@ if (isset($_REQUEST["debug"]) && $_REQUEST["debug"]) ini_set("display_errors", 1
 // 기본 루트 관련 상수 선언
 define("DS", DIRECTORY_SEPARATOR);
 define("HOME", dirname(__DIR__) );
-define("APP", HOME . DS . "App");
-define("CONFIG", HOME . DS . APP . DS . "Config");
-define("CONTROLLER", HOME . DS . APP . DS . "Controller");
+define("CONFIG", HOME . DS . "Config");
+define("LIB", HOME . DS . "Lib" );
+define("CONTROLLER", HOME . DS . LIB . DS ."Controller");
+define("API", HOME . DS . LIB . DS . CONTROLLER . DS . "Api");
 define("ROOT", HOME . DS . "root");
 
 include_once CONFIG . DS . "config.php";
-include_once APP . DS ."autoload.php";
+include_once LIB . DS ."autoload.php";

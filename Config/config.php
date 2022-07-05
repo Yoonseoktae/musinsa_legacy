@@ -11,4 +11,3 @@ $_CONFIG = array(
 		"password" => "antlstk1$1)"
 	)
 );
-
